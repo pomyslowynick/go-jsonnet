@@ -11,7 +11,7 @@ load(
 
 def jsonnet_go_dependencies(go_sdk_version = "host", nogo = None):
     go_rules_dependencies()
-    go_register_toolchains(version = go_sdk_version, nogo = nogo)
+    go_register_toolchains(version = go_sdk_version, nogo = "@io_bazel_rules_go//:tools_nogo")
     gazelle_dependencies()
     go_repository(
         name = "com_github_davecgh_go_spew",
